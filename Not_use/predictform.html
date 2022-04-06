@@ -1,0 +1,160 @@
+
+{%extends 'layout.html' %} 
+{% block content%}
+{% load static %}
+<head>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="shortcut icon" type="image/png" href="{% static 'images/logo_green.ico' %}"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ForCrash</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  </head>
+<body>
+    <div class="container py-5" style="font-family: 'Prompt', sans-serif;">
+        <!-- For demo purpose -->
+        <div class="row mb-4">
+            <div class="col-lg-8 mx-auto text-center">
+                <h3 class="display-6">Test Forms</h3>
+            </div>
+        </div> <!-- End -->
+        <form action="/postformtest/"  method='post'>
+            {% csrf_token %}
+        <div class="row">
+            <div class="col-lg-6 mx-auto">
+                <div class="card ">
+                    <div class="card-header">
+                        <div class="bg-white shadow-sm pt-4 pl-2 pr-2 pb-2">
+                            <!-- Credit card form tabs -->
+                            <ul role="tablist" class="nav bg-light nav-pills rounded nav-fill mb-3">
+                                <li class="nav-item"> <a data-toggle="pill" href="#credit-card" class="nav-link active "> <i ></i> ข้อมูลส่วนตัว </a> </li>
+                                <li class="nav-item"> <a data-toggle="pill" href="#paypal" class="nav-link "> <i ></i> ข้อมูลผู้บาดเจ็บ </a> </li>
+                                <li class="nav-item"> <a data-toggle="pill" href="#net-banking" class="nav-link "> <i></ร> ข้อมูลแวดล้อม </a> </li>
+                            </ul>
+                        </div> <!-- End -->
+                        <!-- Credit card form content -->
+                        <div class="tab-content">
+                            <!-- credit card info-->
+                            <div id="credit-card" class="tab-pane fade show active pt-3">
+                                <form role="form" onsubmit="event.preventDefault()">
+                                    <div id="credit-card" class="tab-pane fade show active pt-3">
+                                        <form role="form" onsubmit="event.preventDefault()">
+                                            <div class="form-group"> <label for="username">
+                                                </label> <input type="number" name="age" placeholder="อายุ" required class="form-control "> </div>
+                                    <div class="form-group "> <select class="form-control" name="sex">
+                                        <option selected disabled>เพศ</option>
+                                        <option value="male">ชาย</option>
+                                        <option value="female">หญิง</option>
+                                    </select> </div>
+                                    <div class="form-group "> <select class="form-control" name="nation">
+                                        <option value="" selected disabled>สัญชาติ</option>
+                                        <option value="thai">ไทย</option>
+                                        <option value="foreigner">ต่างชาติ</option>
+                                    </select> </div>
+                                    <div class="form-group "> <select class="form-control" name="alc">
+                                        <option value="" selected disabled>การดื่มแอลกอฮอล์</option>
+                                        <option value="alc_yes">ดื่ม</option>
+                                        <option value="alc_no">ไม่ดื่ม</option>
+                                        <option value="alc_unknown">ไม่ทราบ</option>
+                                    </select> </div>
+                                    <div class="form-group "> <select class="form-control" name="drug">
+                                        <option value="" selected disabled>การใช้สารเสพติด</option>
+                                        <option value="drug_yes">ใช้</option>
+                                        <option value="drug_no">ไม่ใช้</option>
+                                        <option value="drug_unknown">ไม่ทราบ</option>
+                                    </select> </div>
+                                    <div class="form-group "> <select class="form-control" name="belt">
+                                        <option value="" selected disabled>การคาดเข็มขัดนิรภัย</option>
+                                        <option value="belt_yes">คาด</option>
+                                        <option value="belt_no">ไม่คาด</option>
+                                        <option value="belt_unknown">ไม่ทราบ</option>
+                                    </select> </div>
+                                    <div class="form-group "> <select class="form-control" name="helmet">
+                                        <option value="" selected disabled>การสวมหมวกนิรภัย</option>
+                                        <option value="helmet_yes">สวม</option>
+                                        <option value="helmet_no">ไม่สวม</option>
+                                        <option value="helmet_unknown">ไม่ทราบ</option>
+                                    </select> </div>
+                                </form>
+                            </div>
+                        </div> <!-- End -->
+                        <!-- Paypal info -->
+                        <div id="paypal" class="tab-pane fade pt-3">
+                            <h3>Injury site</h3>
+                            <!-- <img src="{% static 'images/body.png' %}" alt="body_parts" style="width: 400px; margin: 0 auto;"> -->
+                            <input type="hidden" id="head" name="head" value="no" ng-model="isFull" checked>
+                            <input type="checkbox" id="head" name="head" value="yes" ng-model="isFull">
+                            <label for="vehicle1"> บาดเจ็บบริเวณศีรษะ</label><br>
+                            <input type="hidden" id="neck" name="neck" value="no" ng-model="isFull" checked>
+                            <input type="checkbox" id="neck" name="neck" value="yes">
+                            <label for="vehicle2"> บาดเจ็บบริเวณคอ</label><br>
+                            <input type="hidden" id="thorax" name="thorax" value="no" ng-model="isFull" checked>
+                            <input type="checkbox" id="thorax" name="thorax" value="yes">
+                            <label for="vehicle3"> บาดเจ็บบริเวณหน้าอก</label><br><br>
+                            <input type="hidden" id="abdomen" name="abdomen" value="no" ng-model="isFull" checked>
+                            <input type="checkbox" id="abdomen" name="abdomen" value="yes">
+                            <label for="vehicle3"> บาดเจ็บบริเวณช่องท้อง</label><br><br>
+                            <input type="hidden" id="upper" name="upper" value="no" ng-model="isFull" checked>
+                            <input type="checkbox" id="upper" name="upper" value="yes">
+                            <label for="vehicle3"> บาดเจ็บบริเวณแขน</label><br><br>
+                            <input type="hidden" id="pelvis" name="pelvis" value="no" ng-model="isFull" checked>
+                            <input type="checkbox" id="pelvis" name="pelvis" value="yes">
+                            <label for="vehicle3"> บาดเจ็บบริเวณเชิงกราน</label><br><br>
+                            <input type="hidden" id="lower" name="lower" value="no" ng-model="isFull" checked>
+                            <input type="checkbox" id="lower" name="lower" value="yes">
+                            <label for="vehicle3"> บาดเจ็บบริเวณขา</label><br><br>
+                            <input type="hidden" id="back" name="back" value="no" ng-model="isFull" checked>
+                            <input type="checkbox" id="back" name="back" value="yes">
+                            <label for="vehicle3"> บาดเจ็บบริเวณหลัง</label><br><br>
+                        </div> <!-- End -->
+                        <!-- bank transfer info -->
+                        <div id="net-banking" class="tab-pane fade pt-3">
+                            <div class="form-group "> <label for="Select Your Bank">
+                                </label> <select class="form-control" name="transport">
+                                    <option value="" selected disabled>ประเภทของยานพาหนะ</option>
+                                    <option value="transport_bike">รถจักรยาน</option>
+                                    <option value="transport_mc">รถจักรยานยนต์</option>
+                                    <option value="transport_mc3">รถจักรยานยนต์พ่วงข้าง</option>
+                                    <option value="transport_car">รถยนต์</option>
+                                    <option value="transport_truck">รถบรรทุก</option>
+                                    <option value="transport_public">รถโดยสาร</option>
+                                    <option value="transport_others">อื่น ๆ</option>
+                                </select> </div>
+                                <div class="form-group "> <select class="form-control" name="person_type">
+                                    <option value="" selected disabled>สถานะผู้ขับขี่</option>
+                                    <option value="person_type_pedestrian">คนเดินถนน</option>
+                                    <option value="person_type_driver">ผู้ขับขี่</option>
+                                    <option value="person_type_passenger">ผู้โดยสาร</option>
+                                    <option value="person_type_others">อื่น ๆ</option>
+                                </select> </div>
+                                <div class="form-group "> <select class="form-control" name="refer_sender">
+                                    <option value="" selected disabled>ผู้นำส่ง</option>
+                                    <option value="refer_sender_self">มาเอง</option>
+                                    <option value="refer_sender_relative">ญาติ / พลเมืองดี</option>
+                                    <option value="refer_sender_officer">ตำรวจ / จนท.สถานบริการสาธารณสุข</option>
+                                    <option value="refer_sender_rescuer">มูลนิธิกู้ภัย / หน่วยกู้ชีพชุมชน</option>
+                                    <option value="refer_sender_ems">หน่วย EMS โรงพยาบาล</option>
+                                    <option value="refer_sender_unknown">ไม่ทราบ</option>
+                                </select> </div>
+                            </form>
+                            <div class="form-group">
+                                <p> <button type="button" class="btn btn-primary "><i></i> Submit Form</button> </p>
+                            </div>
+                            <p class="text-muted">Note: After clicking on the button, you will be directed to a secure gateway for payment. After completing the payment process, you will be redirected back to the website to view details of your order. </p>
+                        </div> <!-- End -->
+                        <!-- End -->
+                    </div>
+                </div>
+            </div>
+            <input type="submit" name="xgb" value="Submit">
+            </form>
+        </div>
+</body>
+{% endblock%}

@@ -1,0 +1,55 @@
+
+{%extends 'layout1.html' %} 
+{% block content%}
+{% load static %}
+<link rel="stylesheet" href="{% static 'style.css' %}">
+<form action='/postregister/' method='post'>
+    {% csrf_token %}    
+    <div class="pop_up" style="margin-top: 25px;">
+        {% if messages %}
+        <div class="alert alert-warning alert-dismissible fade show" role="alert" style="font-family: Kanit;">
+            {% for message in messages %}
+            {{message}}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            {% endfor%}
+        </div>
+        {%endif%}
+        <div class="box" style="padding: 4%; height: 640px;" >
+            <h2 style="text-align: center; font-weight: 600;font-family: 'Prompt', sans-serif ">ลงทะเบียนเข้าใช้งาน</h2>
+            <form action="https://httpbin.org/post" method="post" style="padding: 0%;">
+                <p>
+                    <label for="input_firstname">ชื่อ</label>
+                    <input id="input_firstname" class="form-control " type="text" name="firstname">
+                </p>
+                <p>
+                    <label for="input_lastname">นามสกุล</label>
+                    <input id="input_lastname" class="form-control " type="text" name="lastname">
+                </p>
+                <p>
+                    <label for="input_institute">หน่วยงาน/โรงพยาบาล</label>
+                    <input id="input_institute" class="form-control " type="text" name="institute">
+                </p>
+                <p>
+                    <label for="input_email">อีเมลล์</label>
+                    <input id="input_email" class="form-control " type="email" name="email">
+                </p>
+                <p>
+                    <label for="input_password">สร้างรหัสผ่าน</label>
+                    <input id="input_password" class="form-control " type="password" name="password">
+                </p>
+                <p>
+                    <label for="input_confirm_password">ยืนยันรหัสผ่าน</label>
+                    <input id="input_confirm_password" class="form-control " type="password" name="confirm_password">
+                </p>
+                <p></p>
+                <p>
+                    <button class="submit_button" type="submit" style="border: 0ch;height: 40px;width: 120px;">ยืนยัน</button>
+                </p>
+                
+            </form>
+            
+        </div>
+</body>
+{% endblock%}
