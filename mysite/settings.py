@@ -25,7 +25,7 @@ SECRET_KEY = '9z@0o0h3&%e2sed^1l0n88j#kpq@@ci#8gg1o_roi5g$933@%v'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost','https://mysterious-peak-88464.herokuapp.com/']
 
 
 # Application definition
