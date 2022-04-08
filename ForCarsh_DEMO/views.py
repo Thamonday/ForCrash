@@ -34,7 +34,7 @@ loginactive = 0
 name = []
 email_G = []
 memberKey = []
-def index(request):
+def index(request): 
     if loginactive == 0: return render(request,'Login.html')
     elif loginactive == 1 : return render(request,'Home.html',{'name':name,'email':email_G,'memberKey':memberKey})
 
@@ -100,17 +100,12 @@ def postregister(request):
     return render(request,'Login.html')
 
 def postQuestionForm(request):
-    MODEL_PATH = Path("models")
-    model1_bin_path = MODEL_PATH/"bin_model1_xgboost.bin"
-    model1_sav_path = MODEL_PATH/"sav_model1_xgboost.sav"
     booster = xgb.Booster()
-    booster.load_model(model1_bin_path)
-    with open(model1_sav_path,'rb') as f:
+    booster.load_model(r'models\bin_model1_xgboost.bin')
+    with open(r'models\sav_model1_xgboost.sav','rb') as f:
         clf1 = pickle.load(f)
-    model2_bin_path = MODEL_PATH/"bin_model2_xgboost.bin"
-    model2_sav_path = MODEL_PATH/"sav_model2_xgboost.sav"
-    booster.load_model(model2_bin_path)
-    with open(model2_sav_path,'rb') as f:
+    booster.load_model(r'models\bin_model2_xgboost.bin')
+    with open(r'models\sav_model2_xgboost.sav','rb') as f:
         clf2 = pickle.load(f)
     
     day_of_week = date_now.strftime("%A")
