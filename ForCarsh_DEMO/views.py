@@ -101,11 +101,11 @@ def postregister(request):
 
 def postQuestionForm(request):
     booster = xgb.Booster()
-    booster.load_model('app/models/bin_model1_xgboost.bin')
-    with open('app/models/sav_model1_xgboost.sav','rb') as f:
+    booster.load_model('bin_model1_xgboost.bin')
+    with open('sav_model1_xgboost.sav','rb') as f:
         clf1 = pickle.load(f)
-    booster.load_model('app/models/bin_model2_xgboost.bin')
-    with open('app/models/sav_model2_xgboost.sav','rb') as f:
+    booster.load_model('bin_model2_xgboost.bin')
+    with open('sav_model2_xgboost.sav','rb') as f:
         clf2 = pickle.load(f)
     
     day_of_week = date_now.strftime("%A")
