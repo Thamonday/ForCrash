@@ -100,12 +100,9 @@ def postregister(request):
     return render(request,'Login.html')
 
 def postQuestionForm(request):
-    booster = xgb.Booster()
-    booster.load_model('./models/bin_model1_xgboost.bin')
-    with open('./models/sav_model1_xgboost.sav','rb') as f:
+    with open(r'models\sav_model2_xgboost.sav','rb') as f:
         clf1 = pickle.load(f)
-    booster.load_model('./models/bin_model2_xgboost.bin')
-    with open('./models/sav_model2_xgboost.sav','rb') as f:
+    with open(r'models\sav_model2_xgboost.sav','rb') as f:
         clf2 = pickle.load(f)
     
     day_of_week = date_now.strftime("%A")
