@@ -104,7 +104,7 @@ def postQuestionForm(request):
         clf1 = pickle.load(f)
     with open('./models/sav_model2_xgboost.sav','rb') as f:
         clf2 = pickle.load(f)
-    
+    gaussian = pickle.load(open('./models/sav_model2_xgboost.sav','rb'))
     day_of_week = date_now.strftime("%A")
     acc_month = int(date_now.strftime("%m"))
     acc_time = int(date_now.strftime("%H"))
