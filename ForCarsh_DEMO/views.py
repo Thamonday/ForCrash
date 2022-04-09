@@ -39,7 +39,7 @@ def index(request):
     elif loginactive == 1 : return render(request,'Home.html',{'name':name,'email':email_G,'memberKey':memberKey})
 
 def login(request):
-    return render(request,'login.html')
+    return render(request,'Login.html')
 
 def logout(request):
     authe.logout(request)
